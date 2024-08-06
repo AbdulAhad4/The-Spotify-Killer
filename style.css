@@ -1,0 +1,290 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+}
+
+body {
+    background-color: black;
+    color: white;
+}
+
+.container {
+    justify-content: center;
+    gap: 10px;
+    margin-top: 9px;
+}
+
+.left {
+    width: 30vw;
+
+}
+
+.library {
+    min-height: calc(100vh - 193px);
+    margin-top: 10px;
+    padding: 8px;
+    position: relative;
+}
+
+.right {
+    width: 67vw;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.home {
+    padding: 14px;
+    height: 124px;
+}
+
+.home .logo img {
+    margin: 8px 5px 0px 5px;
+}
+
+.home ul {
+    margin: 0;
+}
+
+.home ul li {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    margin: 8px;
+}
+
+.lib {
+    align-items: center;
+}
+
+.lib img {
+    width: 28px;
+}
+
+.lib h3 {
+    font-size: 19px;
+}
+
+.head {
+    justify-content: space-between;
+    padding: 3px 6px;
+}
+
+.plus {
+    width: 24px;
+}
+
+footer {
+    color: gray;
+    font-size: 10px;
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+}
+
+footer a {
+    text-decoration: none;
+    color: gray;
+    margin: 5px 10px;
+}
+
+/* The style of the right portion starts here */
+
+.right-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 13px;
+    background-color: #0c0b0b;
+    border-radius: 9px 9px 0px 0px;
+    height: 30px;
+}
+
+.right-header>.logs :nth-child(1) {
+    background: transparent;
+    color: #d0c6c6;
+    font-size: 14px;
+    margin: 0px 19px;
+    border: none;
+    outline: none;
+    font-weight: 700;
+}
+
+.right-header>.logs :nth-child(1):hover {
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.right-header>.logs :nth-child(2) {
+    background-color: #ffffff;
+    padding: 8px;
+    border-radius: 17px;
+    width: 76px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.spotify-playlists {
+    padding: 20px;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 18px 8px;
+}
+
+.card {
+    width: 116px;
+    height: 190px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background-color: #242424;
+    border-radius: 6px;
+    padding: 9px;
+    position: relative;
+}
+
+.card-container .card>* {
+    margin-top: 3px;
+}
+
+.card-container .card img {
+    width: 97%;
+    align-self: center;
+    border-radius: 5px;
+}
+
+.card>h2 {
+    font-family: initial;
+    font-size: 18px;
+    font-weight: 900;
+}
+
+.card>p {
+    font-size: 11px;
+    font-weight: 400;
+}
+
+.card .play {
+    background-color: #00fb00;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3px;
+    position: absolute;
+    top: 89px;
+    right: 16px;
+    opacity: 0;
+    transition: all 1s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.playbar {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: #282828;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0px 0px 9px 9px;
+    padding: 5px 0px;
+    height: 55px;
+}
+
+.playbar .seekbar {
+    height: 4px;
+    width: 100%;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    margin: 0px 15px;
+}
+
+.status {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background-color: white;
+    position: absolute;
+    left: 0%;
+    top: -5px;
+    transition: all 0.5s ease;
+}
+
+.song-navs {
+    display: flex;
+    gap: 20px;
+}
+
+.song-list {
+    margin: 15px 0px;
+    overflow-y: scroll;
+    height: 60vh;
+}
+
+.song-list li .music-icon {
+    height: 34px;
+}
+
+.song-list li .playNow {
+    display: flex;
+    font-weight: 500;
+    padding: 2px;
+    align-items: center;
+}
+
+.song-list li .playNow img {
+    width: 32px;
+    margin: 5px;
+}
+
+.song-list li .info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.song-info :nth-child(1) {
+    font-weight: 800;
+}
+
+.song-info :nth-child(2) {
+    font-size: 12px;
+}
+
+.song-list li {
+    list-style: none;
+    font-size: 14px;
+    align-items: center;
+    padding: 10px;
+    justify-content: space-between;
+    background-color: #262626;
+    border-radius: 7px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.while-play-info {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.while-play-songName {
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.while-play-duration {
+    font-size: 19px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+}

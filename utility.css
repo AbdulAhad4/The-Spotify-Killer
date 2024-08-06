@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+.flex {
+    display: flex;
+}
+
+.border {
+    border: 2px solid red;
+    margin: 3px;
+}
+
+.bg-gray {
+    background-color: #121212;
+}
+
+.radius {
+    border-radius: 9px;
+}
+
+.m10 {
+    margin: 10px;
+}
+
+.op-1 {
+    opacity: 1;
+}
+
+/* the scroll bar code starts */
+html {
+    scrollbar-face-color: #646464;
+    scrollbar-base-color: #646464;
+    scrollbar-3dlight-color: #646464;
+    scrollbar-highlight-color: #313030;
+    scrollbar-track-color: #000;
+    scrollbar-arrow-color: #000;
+    scrollbar-shadow-color: #646464;
+  }
+  
+  ::-webkit-scrollbar { width: 8px; height: 3px;}
+  ::-webkit-scrollbar-button {  background-color: #121212; }
+  ::-webkit-scrollbar-track {  background-color: #3d3c3c;}
+  ::-webkit-scrollbar-track-piece { background-color: #121212;}
+  ::-webkit-scrollbar-thumb { height: 50px; background-color: #2b2b2b; border-radius: 5px;}
+  ::-webkit-scrollbar-corner { background-color: #646464;}
+  ::-webkit-resizer { background-color: #666;}
+
+/* ends */
