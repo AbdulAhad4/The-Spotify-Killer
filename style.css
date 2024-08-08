@@ -32,6 +32,7 @@ body {
     width: 67vw;
     position: relative;
     overflow-x: hidden;
+    height: 97vh;
 }
 
 .home {
@@ -131,10 +132,12 @@ footer a {
 }
 
 .card-container {
+    height: 70vh;
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
     padding: 18px 8px;
+    overflow-y: scroll;
 }
 
 .card {
@@ -205,6 +208,7 @@ footer a {
     position: absolute;
     top: 0;
     margin: 0px 15px;
+    cursor: pointer;
 }
 
 .status {
@@ -215,7 +219,7 @@ footer a {
     position: absolute;
     left: 0%;
     top: -5px;
-    transition: all 0.5s ease;
+    transition: all 0.3s ease;
 }
 
 .song-navs {
@@ -287,4 +291,111 @@ footer a {
     font-size: 19px;
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
+}
+
+.menu {
+    display: none;
+}
+
+.cross {
+    display: none;
+}
+
+@media (max-width:1020px) {
+    .left {
+        position: absolute;
+        left: -150%;
+        transition: all 0.3s;
+        z-index: 1;
+        background-color: black;
+        padding: 0px 9px;
+        width: 374px;
+    }
+
+    .right {
+        width: 95vw;
+        height: 97vh;
+        margin: auto;
+        overflow-y: hidden;
+    }
+
+    .menu{
+        display: block;
+        height: 39px;
+    }
+
+    .right-header {
+        height: 40px;
+    }
+
+    nav img {
+        margin: 0px 10px;
+    }
+
+    .cross {
+        display: block;
+        position: absolute;
+        right: 18px;
+        top: 10px;
+        width: 34px;
+    }
+
+    .while-play-songName {
+        font-size: 16px;
+        font-weight: 700;
+    }
+
+    .while-play-duration {
+        font-size: 16px;
+        font-weight: 300;
+    }
+}
+
+@media (max-width: 600px) {
+    .left {
+        width: 300px;
+    }
+
+    .playbar {
+        /* position: fixed; */
+        border-radius: 6px;
+        width: 90vw;
+        height: auto;
+        flex-direction: column;
+        padding: 11px;
+    }
+
+    .while-play-songName {
+        max-width: 30%;
+        font-size: 14px;
+    }
+
+    .while-play-duration {
+        max-width: 30%;
+    }
+
+    .song-navs {
+        width: 50%;
+    }
+}
+
+@media (max-width: 450px) {
+    .song-navs img {
+        height: 30px;
+        width: 30px;
+    }
+
+    .while-play-songName {
+        width: 35%;
+        font-size: 11px;
+        font-weight: 300px;
+    }
+
+    .while-play-duration {
+        font-size: 12px;
+    }
+
+    .left {
+        width: calc(100vw - 18px);
+    }
 }

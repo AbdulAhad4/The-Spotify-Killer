@@ -38,7 +38,7 @@ async function getData() {
     return response;
 }
 
-function playMusic(path, pause=false) {
+function playMusic(path, pause = false) {
     currentSong.src = path;
     if (!pause) {
         currentSong.src = "/songs/" + path;
@@ -116,16 +116,30 @@ async function main() {
         let currentTime = secondsToMMSS(currentSong.currentTime);
         let duration = secondsToMMSS(currentSong.duration);
         document.querySelector(".while-play-duration").innerHTML = `${currentTime}/${duration}`;
-        let left = (currentSong.currentTime/currentSong.duration)*100;
-        status.style.left = left+"%";
+        let left = (currentSong.currentTime / currentSong.duration) * 100;
+        status.style.left = left + "%";
+    })
+    let link = await getHref()
+    playMusic(link[0], true)
+
+    document.querySelector(".seekbar").addEventListener("click", (e) => {
+        let persent = (e.offsetX / e.target.getBoundingClientRect().width) * 100;
+        document.querySelector(".status").style.left = persent + "%";
+        currentSong.currentTime = (currentSong.duration * persent) / 100;
     }
     )
 
+    // adding the functionality of menu icon
+    document.querySelector(".menu").addEventListener("click", (e) => {
+        document.querySelector(".left").style.left = "0%";
+    }
+    )
 
-    let link = await getHref()
-    playMusic(link[0], true)
+    document.querySelector(".cross").addEventListener("click", (e) => {
+        document.querySelector(".left").style.left = "-150%";
+    }
+    )
 }
 
 main();
 showName();
-// playMusic(getHref()[0], true);
