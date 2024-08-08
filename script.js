@@ -33,7 +33,7 @@ function secondsToMMSS(seconds) {
 
 // All the essential functions are here
 async function getData() {
-    let a = await fetch("songs");
+    let a = await fetch("./songs/");
     let response = await a.text();
     return response;
 }
