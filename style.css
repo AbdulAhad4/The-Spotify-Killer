@@ -129,6 +129,7 @@ footer a {
 
 .spotify-playlists {
     padding: 20px;
+    margin: 0px 0px 13px 0px;
 }
 
 .card-container {
@@ -377,6 +378,10 @@ footer a {
     .song-navs {
         width: 50%;
     }
+
+    .card-container {
+        justify-content: center;
+    }
 }
 
 @media (max-width: 450px) {
@@ -399,3 +404,4 @@ footer a {
         width: calc(100vw - 18px);
     }
 }
+

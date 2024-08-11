@@ -1,28 +1,6 @@
-// // THE DESING RELATED CODES GOES HERE
-
-// let playlistCard = document.querySelectorAll(".card");
-// playlistCard.forEach(element => {
-//     let play = element.querySelector(".play");
-//     element.addEventListener("mouseover", () => {
-//       play.style.opacity = 1;
-//     }
-//     )
-// });
-
-async function getHref() {
-    let songsHrefs = [];
-    let div = document.createElement("div");
-    div.innerHTML = await getData();
-    let as = div.getElementsByTagName("a");
-    for (const a of as) {
-        if (a.href.endsWith(".mp3")) {
-            songsHrefs.push(a.href);
-        }
-    }
-    return songsHrefs
-}
-
+// global variables are here
 var currentSong = new Audio();
+
 // AI written functions are here
 function secondsToMMSS(seconds) {
     const minutes = Math.floor(seconds / 60);
@@ -38,18 +16,17 @@ async function getData() {
     return response;
 }
 
-function playMusic(path, pause = false) {
-    currentSong.src = path;
-    if (!pause) {
-        currentSong.src = "/songs/" + path;
-        currentSong.play()
-        document.querySelector(".while-play-songName").innerHTML = path.replace(".mp3", "").replace("-", " - ");
-        play.src = "/media/svgs/songPause.svg";
+async function getHref() {
+    let songsHrefs = [];
+    let div = document.createElement("div");
+    div.innerHTML = await getData();
+    let as = div.getElementsByTagName("a");
+    for (const a of as) {
+        if (a.href.endsWith(".mp3")) {
+            songsHrefs.push(a.href);
+        }
     }
-
-    else {
-        document.querySelector(".while-play-songName").innerHTML = path.replace("http://127.0.0.1:5500/songs/", "").replace("%20", " ").replace("-", " - ").replace(".mp3", "");
-    }
+    return songsHrefs
 }
 
 async function getName() {
@@ -66,7 +43,19 @@ async function getName() {
     return songNames;
 }
 
+function playMusic(path, pause = false) {
+    currentSong.src = path;
+    if (!pause) {
+        currentSong.src = "/songs/" + path;
+        currentSong.play()
+        document.querySelector(".while-play-songName").innerHTML = path.replace(".mp3", "");
+        play.src = "/media/svgs/songPause.svg";
+    }
 
+    else {
+        document.querySelector(".while-play-songName").innerHTML = path.replace("http://127.0.0.1:5500/songs/", "").replace("%20", " ").replace(".mp3", "");
+    }
+}
 
 async function showName() {
     let songNames = await getName();
@@ -139,6 +128,44 @@ async function main() {
         document.querySelector(".left").style.left = "-150%";
     }
     )
+
+    // EVENT LISTENER TO PREVIOUS
+    previous.addEventListener("click", () => {
+        currentSong.currentTime = 0;
+        previousSong();
+    }
+    ) 
+
+    // EVENT LISTENER TO PREVIOUS
+    next.addEventListener("click", () => {
+        nextSong();
+    }
+    ) 
+}
+
+async function nextSong() {
+    let songs = await getName();
+    let playingSong = document.querySelector(".while-play-songName").innerHTML;
+    let index = songs.indexOf(playingSong);
+    if ((index+1) < (songs.length)) {
+        let songAddress = `${songs[index+1]}.mp3`
+        playMusic(songAddress);
+    } else {
+        playMusic(`${songs[0]}.mp3`);
+    }
+}
+
+async function previousSong() {
+    let songs = await getName();
+    let playingSong = document.querySelector(".while-play-songName").innerHTML;
+    let index = songs.indexOf(playingSong);
+    console.log(index-1);
+    if ((index-1) >= 0) {
+        let songAddress = `${songs[index-1]}.mp3`
+        playMusic(songAddress);
+    } else {
+        playMusic(`${songs[songs.length-1]}.mp3`);
+    }
 }
 
 main();
