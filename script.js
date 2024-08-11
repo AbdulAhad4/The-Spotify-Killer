@@ -140,7 +140,15 @@ async function main() {
     next.addEventListener("click", () => {
         nextSong();
     }
-    ) 
+    )
+    
+    //  EVENT LISTENER TO VOLUME SEEKBAR
+    volume.addEventListener("change", (e) => {
+      let level = parseInt(e.target.value) / 100; 
+      console.log(level);
+      currentSong.volume = level;
+    }
+    )
 }
 
 async function nextSong() {

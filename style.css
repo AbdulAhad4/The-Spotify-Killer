@@ -1,3 +1,7 @@
+:root {
+    --a: 0;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -151,6 +155,12 @@ footer a {
     border-radius: 6px;
     padding: 9px;
     position: relative;
+    transition: all 0.9s;
+}
+
+.card:hover {
+    --a: 1;
+    background-color: #3b3b3b;
 }
 
 .card-container .card>* {
@@ -180,12 +190,12 @@ footer a {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 3px;
+    padding: 8px;
     position: absolute;
     top: 89px;
     right: 16px;
-    opacity: 0;
-    transition: all 1s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    opacity: var(--a);
+    transition: all 0.9s;
 }
 
 .playbar {
@@ -310,6 +320,46 @@ footer a {
     align-items: center;
 }
 
+.volume {
+    display: flex;
+    align-items: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* code for reponsiveness */
 @media (max-width:1020px) {
     .left {
@@ -329,7 +379,7 @@ footer a {
         overflow-y: hidden;
     }
 
-    .menu{
+    .menu {
         display: block;
         height: 39px;
     }
@@ -367,6 +417,7 @@ footer a {
     }
 
     .playbar {
+        display: flex;
         border-radius: 6px;
         width: 90vw;
         height: auto;
@@ -417,4 +468,3 @@ footer a {
         width: calc(100vw - 18px);
     }
 }
-
