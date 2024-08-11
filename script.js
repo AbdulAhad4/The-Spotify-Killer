@@ -159,7 +159,6 @@ async function previousSong() {
     let songs = await getName();
     let playingSong = document.querySelector(".while-play-songName").innerHTML;
     let index = songs.indexOf(playingSong);
-    console.log(index-1);
     if ((index-1) >= 0) {
         let songAddress = `${songs[index-1]}.mp3`
         playMusic(songAddress);

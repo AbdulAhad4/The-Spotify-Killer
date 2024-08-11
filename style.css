@@ -286,6 +286,8 @@ footer a {
     font-family: "Poppins", sans-serif;
     font-size: 18px;
     font-weight: 400;
+    width: 40%;
+    word-break: break-word;
 }
 
 .while-play-duration {
@@ -302,6 +304,13 @@ footer a {
     display: none;
 }
 
+.aditional-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* code for reponsiveness */
 @media (max-width:1020px) {
     .left {
         position: absolute;
@@ -358,7 +367,6 @@ footer a {
     }
 
     .playbar {
-        /* position: fixed; */
         border-radius: 6px;
         width: 90vw;
         height: auto;
@@ -367,16 +375,21 @@ footer a {
     }
 
     .while-play-songName {
-        max-width: 30%;
+        width: 40%;
         font-size: 14px;
     }
 
     .while-play-duration {
-        max-width: 30%;
+        width: 15%;
     }
 
     .song-navs {
-        width: 50%;
+        width: 20%;
+    }
+
+    .song-navs img {
+        height: 30px;
+        width: 30px;
     }
 
     .card-container {
